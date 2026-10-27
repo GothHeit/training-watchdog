@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "training-watchdog"
+dynamic = ["version"]
+description = "Stop paying for GPUs that aren't training."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+training-watchdog = "training_watchdog.cli:main"
+twd = "training_watchdog.cli:main"
+
+[tool.setuptools]
+packages = ["training_watchdog"]
+
+[tool.setuptools.dynamic]
+version = {attr = "training_watchdog.__version__"}
